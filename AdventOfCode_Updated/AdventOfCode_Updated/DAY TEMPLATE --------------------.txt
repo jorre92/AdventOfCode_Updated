@@ -1,0 +1,46 @@
+// .cpp file
+
+#include "DayXX_2020.h"
+
+AOC20::DayXX::DayXX() : Day("2020//Input//dayXX_data.txt", "2020//Input//dayXX_data_simple.txt")
+{
+	_name = __func__;
+}
+
+void AOC20::DayXX::SolvePartOne(bool simpleData)
+{
+	auto input = Day::Input(simpleData);
+
+
+	printf("[%s-%s] : .\n", _name.c_str(), __func__);
+}
+
+void AOC20::DayXX::SolvePartTwo(bool simpleData)
+{
+	auto input = Day::Input(simpleData);
+
+	printf("[%s-%s] : .\n", _name.c_str(), __func__);
+}
+
+AOC20::DayXX::~DayXX()
+{
+}
+
+// .h file
+
+#pragma once
+#include "Day.h"
+
+namespace AOC20
+{
+	class DayXX : public Day
+	{
+	public:
+		DayXX();
+
+		void SolvePartOne(bool simpleData);
+		void SolvePartTwo(bool simpleData);
+
+		~DayXX();
+	};
+}
