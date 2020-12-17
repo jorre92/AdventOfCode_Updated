@@ -37,19 +37,13 @@ void AOC20::Day17::UpdateLayers()
 			}
 		}
 
-		if (cell.second)
+		if (cell.second && (onNeighbors != 2 && onNeighbors != 3))
 		{
-			if (onNeighbors != 2 && onNeighbors != 3)
-			{
-				temp[cell.first] = false;
-			}
+			temp[cell.first] = false;
 		}
-		else
+		else if(!cell.second && onNeighbors == 3)
 		{
-			if (onNeighbors == 3)
-			{
-				temp[cell.first] = true;
-			}
+			temp[cell.first] = true;
 		}
 	}
 	_powerGrid3D = temp;
@@ -79,6 +73,7 @@ void AOC20::Day17::UpdateLayers4D()
 						}
 
 						Coordinate4D newPos = { position.X + x, position.Y + y, position.Z + z, position.W + w };
+
 						if (_powerGrid4D.find(newPos) == _powerGrid4D.end())
 						{
 							temp[newPos] = false;
@@ -92,19 +87,13 @@ void AOC20::Day17::UpdateLayers4D()
 			}
 		}
 
-		if (cell.second)
+		if (cell.second && (onNeighbors != 2 && onNeighbors != 3))
 		{
-			if (onNeighbors != 2 && onNeighbors != 3)
-			{
-				temp[cell.first] = false;
-			}
+			temp[cell.first] = false;
 		}
-		else
+		else if (!cell.second && onNeighbors == 3)
 		{
-			if (onNeighbors == 3)
-			{
-				temp[cell.first] = true;
-			}
+			temp[cell.first] = true;
 		}
 	}
 	_powerGrid4D = temp;
@@ -136,6 +125,7 @@ void AOC20::Day17::SolvePartOne(bool simpleData)
 			}
 		}
 	}
+
 	auto temp = _powerGrid3D;
 	for(auto cell : temp)
 	{
@@ -161,14 +151,7 @@ void AOC20::Day17::SolvePartOne(bool simpleData)
 		UpdateLayers();
 	}
 
-	size_t nr = 0;
-	for (auto cell : _powerGrid3D)
-	{
-		if (cell.second)
-		{
-			nr++;
-		}
-	}
+	size_t nr = std::count_if(_powerGrid3D.begin(), _powerGrid3D.end(), [](std::pair<Coordinate3D, bool> a) {return a.second; });
 
 	printf("[%s-%s] : Power source cubes active int 3D {%d}.\n", _name.c_str(), __func__, nr);
 }
@@ -208,11 +191,7 @@ void AOC20::Day17::SolvePartTwo(bool simpleData)
 					for (int w = -1; w < 2; ++w)
 					{
 						Coordinate4D newPos = { pos.X + x, pos.Y + y, pos.Z + z, pos.W + w };
-						if (_powerGrid4D.find(newPos) != _powerGrid4D.end())
-						{
-
-						}
-						else
+						if (_powerGrid4D.find(newPos) == _powerGrid4D.end())
 						{
 							_powerGrid4D[newPos] = false;
 						}
@@ -227,14 +206,8 @@ void AOC20::Day17::SolvePartTwo(bool simpleData)
 		UpdateLayers4D();
 	}
 	
-	size_t nr = 0;
-	for (auto cell : _powerGrid4D)
-	{
-		if (cell.second)
-		{
-			nr++;
-		}
-	}
+
+	size_t nr = std::count_if(_powerGrid4D.begin(), _powerGrid4D.end(), [](std::pair<Coordinate4D, bool> a) {return a.second; });
 
 	printf("[%s-%s] : Power source cubes active int 4D {%d}.\n", _name.c_str(), __func__, nr);
 }

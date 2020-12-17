@@ -2,6 +2,22 @@
 #include <regex>
 #include <iostream>
 
+bool AOCCORE::RegularExpressions::RunSearch(const std::string string, const std::string regEx, std::string& result)
+{
+	std::regex regex(regEx);
+	std::smatch match;
+	result = "";
+	
+	auto found = std::regex_search(string, match, regex);
+
+	if (found)
+	{
+		result = match[0];
+	}
+
+	return found;
+}
+
 bool AOCCORE::RegularExpressions::RunSearch(const std::string string, const std::string regEx, std::vector<std::string>& results)
 {
 	std::regex regex(regEx);

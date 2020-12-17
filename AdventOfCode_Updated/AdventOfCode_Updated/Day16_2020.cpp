@@ -1,17 +1,14 @@
 #include "Day16_2020.h"
 #include "RegularExpressions.h"
-#include <regex>
 
 bool AOC20::Day16::IsValidTicket(const std::string ticket, std::vector<size_t>& failedOn) const
 {
 	bool valid = true;
-	std::string rx = "([0-9]+)";
 	std::vector<std::string> results;
-	AOCCORE::RegularExpressions regEx;
 
-	if (regEx.RunIteratorSearch(ticket, rx, results))
+	if (AOCCORE::RegularExpressions::RunIteratorSearch(ticket, "([0-9]+)", results))
 	{
-		for (auto& result : results)
+		for (auto result : results)
 		{
 			size_t res = std::stoi(result);
 			auto anyValidSpann = false;
@@ -21,6 +18,7 @@ bool AOC20::Day16::IsValidTicket(const std::string ticket, std::vector<size_t>& 
 				if (spann.Valid(res))
 				{
 					anyValidSpann = true;
+					break;
 				}
 			}
 
@@ -37,15 +35,12 @@ bool AOC20::Day16::IsValidTicket(const std::string ticket, std::vector<size_t>& 
 
 void AOC20::Day16::UpdateValidSpanns(const std::vector<std::string>& batch)
 {
-	AOCCORE::RegularExpressions regEx;
-	std::string regularExpression = "(.*): ([0-9]+)-([0-9]+) or ([0-9]+)-([0-9]+)";
-
 	_validSpanns.clear();
 	for (auto rule : batch)
 	{
 		std::vector<std::string> results;
 
-		if (regEx.RunSearch(rule, regularExpression, results))
+		if (AOCCORE::RegularExpressions::RunSearch(rule, "(.*): ([0-9]+)-([0-9]+) or ([0-9]+)-([0-9]+)", results))
 		{
 			_validSpanns.push_back(ValidSpann(results[1], std::stoi(results[2]), std::stoi(results[3]), std::stoi(results[4]), std::stoi(results[5])));
 		}
@@ -60,8 +55,8 @@ AOC20::Day16::Day16() : Day("2020//Input//day16_data.txt", "2020//Input//day16_d
 void AOC20::Day16::SolvePartOne(bool simpleData)
 {
 	auto input = Day::Input(simpleData);
-
 	std::vector<std::string> batch;
+
 	if (input.NextBatch(batch))
 	{
 		UpdateValidSpanns(batch);
@@ -91,9 +86,7 @@ void AOC20::Day16::SolvePartOne(bool simpleData)
 void AOC20::Day16::SolvePartTwo(bool simpleData)
 {
 	auto input = Day::Input(simpleData);
-	AOCCORE::RegularExpressions regEx;
 	std::vector<std::string> batch;
-
 	std::vector<size_t> myTicket;
 	std::vector<std::vector<size_t>> otherTickets;
 	std::vector<std::vector<ValidSpann>> validSpannsForField;
@@ -108,7 +101,7 @@ void AOC20::Day16::SolvePartTwo(bool simpleData)
 	{
 		auto line = batch[1];
 		std::vector<std::string> results;
-		if (regEx.RunIteratorSearch(line, "([0-9]+)", results))
+		if (AOCCORE::RegularExpressions::RunIteratorSearch(line, "([0-9]+)", results))
 		{
 			for (auto number : results)
 			{
@@ -127,7 +120,7 @@ void AOC20::Day16::SolvePartTwo(bool simpleData)
 			std::vector<size_t> failedOn;
 			std::vector<size_t> ticketNumbers;
 
-			if (!(regEx.RunIteratorSearch(line, "([0-9]+)", results) && IsValidTicket(line, failedOn)))
+			if (!(AOCCORE::RegularExpressions::RunIteratorSearch(line, "([0-9]+)", results) && IsValidTicket(line, failedOn)))
 			{
 				continue;
 			}

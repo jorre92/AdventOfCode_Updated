@@ -17,19 +17,11 @@ void AOC20::Day02::SolvePartOne(bool simpleData)
 
 		if (AOCCORE::RegularExpressions::RunSearch(s, "([0-9]*)-([0-9]*) ([a-z]|[A-Z]): (.*)", parsed))
 		{
-			int min = std::stoi(parsed[1]);
-			int max = std::stoi(parsed[2]);
+			size_t min = std::stoi(parsed[1]);
+			size_t max = std::stoi(parsed[2]);
 			char c = parsed[3][0];
 			auto password = parsed[4];
-
-			int count = 0;
-			for (auto character : password)
-			{
-				if (c == character)
-				{
-					count++;
-				}
-			}
+			int count = std::count(password.begin(), password.end(), c);
 
 			if (count <= max && count >= min)
 			{
@@ -44,7 +36,6 @@ void AOC20::Day02::SolvePartOne(bool simpleData)
 void AOC20::Day02::SolvePartTwo(bool simpleData)
 {
 	auto input = Day::Input(simpleData);
-
 	int validPasswords = 0;
 
 	for (std::string s; input.NextRow(s);)
@@ -53,8 +44,8 @@ void AOC20::Day02::SolvePartTwo(bool simpleData)
 
 		if (AOCCORE::RegularExpressions::RunSearch(s, "([0-9]*)-([0-9]*) ([a-z]|[A-Z]): (.*)", parsed))
 		{
-			int first = std::stoi(parsed[1]);
-			int second = std::stoi(parsed[2]);
+			size_t first = std::stoi(parsed[1]);
+			size_t second = std::stoi(parsed[2]);
 			char c = parsed[3][0];
 			auto password = parsed[4];
 

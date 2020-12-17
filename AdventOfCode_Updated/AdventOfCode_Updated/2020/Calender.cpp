@@ -5,6 +5,8 @@
 #include "../Day02_2020.h"
 #include "../Day03_2020.h"
 #include "../Day04_2020.h"
+#include "../Day05_2020.h"
+#include "../Day06_2020.h"
 #include "../Day16_2020.h"
 #include "../Day17_2020.h"
 
@@ -25,6 +27,12 @@ Day* AOC20::Calander::CreateSolution(AOCCORE::CalenderDay calenderDay) const
 		break;
 	case AOCCORE::CalenderDay::Four:
 		day = new Day04();
+		break;
+	case AOCCORE::CalenderDay::Five:
+		day = new Day05();
+		break;
+	case AOCCORE::CalenderDay::Six:
+		day = new Day06();
 		break;
 	case AOCCORE::CalenderDay::Sixteen:
 		day = new Day16();

@@ -34,9 +34,7 @@ namespace EXECUTE
 
 int main()
 {
-	auto dayId = AOCCORE::CalenderDay::Seventeen;
-	
-	//EXECUTE::Exe(dayId);
+	//EXECUTE::Exe(AOCCORE::CalenderDay::Six);
 	
 	for (int i = 0; i < AOCCORE::CalenderDay::NumberOfDays; ++i)
 	{

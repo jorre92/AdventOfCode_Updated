@@ -56,19 +56,18 @@ AOC20::Day04::Day04() : Day("2020//Input//day04_data.txt", "2020//Input//day04_d
 {
 	_name = __func__;
 
-	_requredFields.push_back("byr");
-	_requredFields.push_back("iyr");
-	_requredFields.push_back("eyr");
-	_requredFields.push_back("hgt");
-	_requredFields.push_back("hcl");
-	_requredFields.push_back("ecl");
-	_requredFields.push_back("pid");
+	_requredFields.push_back("byr"); // 0
+	_requredFields.push_back("iyr"); // 1
+	_requredFields.push_back("eyr"); // 2
+	_requredFields.push_back("hgt"); // 3
+	_requredFields.push_back("hcl"); // 4
+	_requredFields.push_back("ecl"); // 5
+	_requredFields.push_back("pid"); // 6
 }
 
 void AOC20::Day04::SolvePartOne(bool simpleData)
 {
 	auto input = Day::Input(simpleData);
-
 	size_t validPassports = 0;
 
 	for (std::string batch; input.NextBatch(batch);)
@@ -102,7 +101,6 @@ void AOC20::Day04::SolvePartOne(bool simpleData)
 void AOC20::Day04::SolvePartTwo(bool simpleData)
 {
 	auto input = Day::Input(simpleData);
-
 	size_t validPassports = 0;
 
 	for (std::string batch; input.NextBatch(batch);)
