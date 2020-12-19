@@ -153,6 +153,8 @@
     <ClCompile Include="Day06_2020.cpp" />
     <ClCompile Include="Day16_2020.cpp" />
     <ClCompile Include="Day17_2020.cpp" />
+    <ClCompile Include="Day18_2020.cpp" />
+    <ClCompile Include="Day19_2020.cpp" />
     <ClCompile Include="DayNone.cpp" />
     <ClCompile Include="InputExtractor.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -172,6 +174,8 @@
     <ClInclude Include="Day06_2020.h" />
     <ClInclude Include="Day16_2020.h" />
     <ClInclude Include="Day17_2020.h" />
+    <ClInclude Include="Day18_2020.h" />
+    <ClInclude Include="Day19_2020.h" />
     <ClInclude Include="DayNone.h" />
     <ClInclude Include="InputExtractor.h" />
     <ClInclude Include="RegularExpressions.h" />

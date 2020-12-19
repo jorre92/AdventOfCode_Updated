@@ -34,12 +34,12 @@ namespace EXECUTE
 
 int main()
 {
-	//EXECUTE::Exe(AOCCORE::CalenderDay::Six);
-	
+	EXECUTE::Exe(AOCCORE::CalenderDay::Nineteen, true);
+	/*
 	for (int i = 0; i < AOCCORE::CalenderDay::NumberOfDays; ++i)
 	{
-		EXECUTE::Exe((AOCCORE::CalenderDay)i);
+		EXECUTE::Exe((AOCCORE::CalenderDay)i, false);
 	}
-	
+	*/
 	return EXIT_SUCCESS;
 }

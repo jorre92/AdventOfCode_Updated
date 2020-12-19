@@ -153,7 +153,7 @@ void AOC20::Day17::SolvePartOne(bool simpleData)
 
 	size_t nr = std::count_if(_powerGrid3D.begin(), _powerGrid3D.end(), [](std::pair<Coordinate3D, bool> a) {return a.second; });
 
-	printf("[%s-%s] : Power source cubes active int 3D {%d}.\n", _name.c_str(), __func__, nr);
+	printf("[%s-%s] : Power source cubes active in 3D {%d}.\n", _name.c_str(), __func__, nr);
 }
 
 void AOC20::Day17::SolvePartTwo(bool simpleData)
@@ -209,7 +209,7 @@ void AOC20::Day17::SolvePartTwo(bool simpleData)
 
 	size_t nr = std::count_if(_powerGrid4D.begin(), _powerGrid4D.end(), [](std::pair<Coordinate4D, bool> a) {return a.second; });
 
-	printf("[%s-%s] : Power source cubes active int 4D {%d}.\n", _name.c_str(), __func__, nr);
+	printf("[%s-%s] : Power source cubes active in 4D {%d}.\n", _name.c_str(), __func__, nr);
 }
 
 AOC20::Day17::~Day17()
