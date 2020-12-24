@@ -4,8 +4,7 @@ int AOC20::Day23::move(std::vector<int>& nextCup, int current)
 {
 
 	/*
-	cups: (3) 8  9  1  2  5  4  6  7
-	pick up: 8, 9, 1
+	
 
 	our current id is 3
 	index = cup
@@ -30,11 +29,16 @@ int AOC20::Day23::move(std::vector<int>& nextCup, int current)
 
 	the current (3) now need to point to the next value after the detatched group; aka nextCup[1] or 2
 	nextCup[3] = 2 <--- CHANGE
-	we also need to change so that:
-	nextCup[2] points to the first element in the detatched group aka 8.
+
+	cups: (3) 2 5 4 6 7
+	detatched 8 9 1
+
+	we also need to change so that: nextCup[2] points to the first element in the detatched group aka 8.
 	nextCup[2] = 8 <---- CHANGE	
-	Now we need to attatch the end of the detatched "tail" aka cup nr 1 to the old value of nextCup[2] aka 5
+	we need to attatch the end of the detatched "tail" aka cup nr 1 to the old value of nextCup[2] aka 5
 	nextCup[1] = 5 <---- CHANGE
+
+	cups: (3) 2 8 9 1 5 4 6 7
 
 	now we have the following:
 	nextCup[0] = 0
@@ -48,20 +52,19 @@ int AOC20::Day23::move(std::vector<int>& nextCup, int current)
 	nextCup[8] = 9
 	nextCup[9] = 1
 
-	last we check for the next current value
-	nextCup[current] = x
-	curretn = 2
-	nextCup[2] = 8
-	cups: (2) 8 9 1 5 4 6 7 3
-	pick up: 8, 9, 1
+	So we only need to change the following:
+	The current cup needs to point to whatever the end of the tail was connected to (2 in this case)
+	We need to connect the start of the tail (8) to the new destination (2)
+	and we need to connect the 
 	*/
+
 	int detatched[3];
+
 	detatched[0] = nextCup[current];
 	detatched[1] = nextCup[detatched[0]];
 	detatched[2] = nextCup[detatched[1]];
 
-	// detach first, second, and third from the cercle.
-	nextCup[current] = detatched[2]; // The current cup, now points to the cup that the third cup is pointing to.
+	nextCup[current] = detatched[2];
 
 	int destination = current - 1;
 	if (destination <= 0)
@@ -70,9 +73,7 @@ int AOC20::Day23::move(std::vector<int>& nextCup, int current)
 	}
 
 	// make sure the next destination is not in the detached set.
-	while (detatched[0] == destination ||
-		detatched[1] == destination ||
-		detatched[2] == destination)
+	while (detatched[0] == destination || detatched[1] == destination || detatched[2] == destination)
 	{
 		destination--;
 		if (destination <= 0)
