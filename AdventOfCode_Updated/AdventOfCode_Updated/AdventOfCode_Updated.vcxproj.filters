@@ -99,6 +99,27 @@
     <ClCompile Include="Day19_2020.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Day20_2020.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Day21_2020.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Day22_2020.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Day23_2020.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Day24_2020.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Deck.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Day.h">
@@ -153,6 +174,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Day19_2020.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day20_2020.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day21_2020.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day22_2020.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day23_2020.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Day24_2020.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Deck.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,6 +11,10 @@
 #include "../Day17_2020.h"
 #include "../Day18_2020.h"
 #include "../Day19_2020.h"
+#include "../Day20_2020.h"
+#include "../Day21_2020.h"
+#include "../Day22_2020.h"
+#include "../Day23_2020.h"
 
 Day* AOC20::Calander::CreateSolution(AOCCORE::CalenderDay calenderDay) const
 {
@@ -47,6 +51,18 @@ Day* AOC20::Calander::CreateSolution(AOCCORE::CalenderDay calenderDay) const
 		break;
 	case AOCCORE::CalenderDay::Nineteen:
 		day = new Day19();
+		break;
+	case AOCCORE::CalenderDay::Twenty:
+		day = new Day20();
+		break;
+	case AOCCORE::CalenderDay::TwentyOne:
+		day = new Day21();
+		break;
+	case AOCCORE::CalenderDay::TwentyTwo:
+		day = new Day22();
+		break;
+	case AOCCORE::CalenderDay::TwentyThree:
+		day = new Day23();
 		break;
 	default:
 		day = new DayNone();

@@ -144,6 +144,7 @@
     <ClCompile Include="2019\Day02.cpp" />
     <ClCompile Include="2020\Calender.cpp" />
     <ClCompile Include="CalenderDay.h" />
+    <ClCompile Include="CameraView.cpp" />
     <ClCompile Include="Day.cpp" />
     <ClCompile Include="Day01_2020.cpp" />
     <ClCompile Include="Day02_2020.cpp" />
@@ -155,7 +156,13 @@
     <ClCompile Include="Day17_2020.cpp" />
     <ClCompile Include="Day18_2020.cpp" />
     <ClCompile Include="Day19_2020.cpp" />
+    <ClCompile Include="Day20_2020.cpp" />
+    <ClCompile Include="Day21_2020.cpp" />
+    <ClCompile Include="Day22_2020.cpp" />
+    <ClCompile Include="Day23_2020.cpp" />
+    <ClCompile Include="Day24_2020.cpp" />
     <ClCompile Include="DayNone.cpp" />
+    <ClCompile Include="Deck.cpp" />
     <ClCompile Include="InputExtractor.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="RegularExpressions.cpp" />
@@ -165,6 +172,7 @@
     <ClInclude Include="2019\Day01.h" />
     <ClInclude Include="2019\Day02.h" />
     <ClInclude Include="2020\Calender.h" />
+    <ClInclude Include="CameraView.h" />
     <ClInclude Include="Day.h" />
     <ClInclude Include="Day01_2020.h" />
     <ClInclude Include="Day02_2020.h" />
@@ -176,7 +184,13 @@
     <ClInclude Include="Day17_2020.h" />
     <ClInclude Include="Day18_2020.h" />
     <ClInclude Include="Day19_2020.h" />
+    <ClInclude Include="Day20_2020.h" />
+    <ClInclude Include="Day21_2020.h" />
+    <ClInclude Include="Day22_2020.h" />
+    <ClInclude Include="Day23_2020.h" />
+    <ClInclude Include="Day24_2020.h" />
     <ClInclude Include="DayNone.h" />
+    <ClInclude Include="Deck.h" />
     <ClInclude Include="InputExtractor.h" />
     <ClInclude Include="RegularExpressions.h" />
   </ItemGroup>
