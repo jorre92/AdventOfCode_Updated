@@ -1,5 +1,5 @@
 #include "Day04_2020.h"
-#include "RegularExpressions.h"
+#include "../RegularExpressions.h"
 
 bool AOC20::Day04::ValidateData(size_t key, const std::string& value) const
 {
@@ -80,7 +80,7 @@ void AOC20::Day04::SolvePartOne(bool simpleData)
 			continue;
 		}
 
-		for (auto requred : _requredFields)
+		for (std::string requred : _requredFields)
 		{
 			if (std::find(regExResults.begin(), regExResults.end(), requred) == regExResults.end())
 			{

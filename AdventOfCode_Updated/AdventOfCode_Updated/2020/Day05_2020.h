@@ -1,20 +1,18 @@
 #pragma once
-#include "Day.h"
+#include "../Day.h"
 
 namespace AOC20
 {
-	class Day03 : public Day
+	class Day05 : public Day
 	{
 	private:
-		bool HitTree(size_t, const std::string&) const;
+		constexpr int Power(int n, int p);
 	public:
-		Day03();
+		Day05();
 
 		void SolvePartOne(bool simpleData);
 		void SolvePartTwo(bool simpleData);
 
-		~Day03();
+		~Day05();
 	};
 }
-
-

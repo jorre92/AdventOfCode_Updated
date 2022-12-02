@@ -1,5 +1,5 @@
 #pragma once
-#include "Day.h"
+#include "../Day.h"
 
 namespace AOC20
 {

@@ -1,5 +1,5 @@
 #include "Day05_2020.h"
-#include "RegularExpressions.h"
+#include "../RegularExpressions.h"
 #include <algorithm>
 
 AOC20::Day05::Day05() : Day("2020//Input//day05_data.txt", "2020//Input//day05_data_simple.txt")

@@ -42,13 +42,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -143,24 +143,25 @@
     <ClCompile Include="2019\Day01.cpp" />
     <ClCompile Include="2019\Day02.cpp" />
     <ClCompile Include="2020\Calender.cpp" />
+    <ClCompile Include="2020\Day01_2020.cpp" />
+    <ClCompile Include="2020\Day03_2020.cpp" />
+    <ClCompile Include="2020\Day04_2020.cpp" />
+    <ClCompile Include="2020\Day05_2020.cpp" />
+    <ClCompile Include="2020\Day06_2020.cpp" />
+    <ClCompile Include="2020\Day16_2020.cpp" />
+    <ClCompile Include="2020\Day17_2020.cpp" />
+    <ClCompile Include="2020\Day18_2020.cpp" />
+    <ClCompile Include="2020\Day19_2020.cpp" />
+    <ClCompile Include="2020\Day20_2020.cpp" />
+    <ClCompile Include="2020\Day21_2020.cpp" />
+    <ClCompile Include="2020\Day22_2020.cpp" />
+    <ClCompile Include="2020\Day23_2020.cpp" />
+    <ClCompile Include="2020\Day24_2020.cpp" />
+    <ClCompile Include="2022\Day01_2022.cpp" />
+    <ClCompile Include="2022\Day02_2022.cpp" />
     <ClCompile Include="CalenderDay.h" />
     <ClCompile Include="CameraView.cpp" />
     <ClCompile Include="Day.cpp" />
-    <ClCompile Include="Day01_2020.cpp" />
-    <ClCompile Include="Day02_2020.cpp" />
-    <ClCompile Include="Day03_2020.cpp" />
-    <ClCompile Include="Day04_2020.cpp" />
-    <ClCompile Include="Day05_2020.cpp" />
-    <ClCompile Include="Day06_2020.cpp" />
-    <ClCompile Include="Day16_2020.cpp" />
-    <ClCompile Include="Day17_2020.cpp" />
-    <ClCompile Include="Day18_2020.cpp" />
-    <ClCompile Include="Day19_2020.cpp" />
-    <ClCompile Include="Day20_2020.cpp" />
-    <ClCompile Include="Day21_2020.cpp" />
-    <ClCompile Include="Day22_2020.cpp" />
-    <ClCompile Include="Day23_2020.cpp" />
-    <ClCompile Include="Day24_2020.cpp" />
     <ClCompile Include="DayNone.cpp" />
     <ClCompile Include="Deck.cpp" />
     <ClCompile Include="InputExtractor.cpp" />
@@ -172,23 +173,25 @@
     <ClInclude Include="2019\Day01.h" />
     <ClInclude Include="2019\Day02.h" />
     <ClInclude Include="2020\Calender.h" />
+    <ClInclude Include="2020\Day01_2020.h" />
+    <ClInclude Include="2020\Day02_2020.h" />
+    <ClInclude Include="2020\Day03_2020.h" />
+    <ClInclude Include="2020\Day04_2020.h" />
+    <ClInclude Include="2020\Day05_2020.h" />
+    <ClInclude Include="2020\Day06_2020.h" />
+    <ClInclude Include="2020\Day16_2020.h" />
+    <ClInclude Include="2020\Day17_2020.h" />
+    <ClInclude Include="2020\Day18_2020.h" />
+    <ClInclude Include="2020\Day19_2020.h" />
+    <ClInclude Include="2020\Day20_2020.h" />
+    <ClInclude Include="2020\Day21_2020.h" />
+    <ClInclude Include="2020\Day22_2020.h" />
+    <ClInclude Include="2020\Day23_2020.h" />
+    <ClInclude Include="2020\Day24_2020.h" />
+    <ClInclude Include="2022\Day01_2022.h" />
+    <ClInclude Include="2022\Day02_2022.h" />
     <ClInclude Include="CameraView.h" />
     <ClInclude Include="Day.h" />
-    <ClInclude Include="Day01_2020.h" />
-    <ClInclude Include="Day02_2020.h" />
-    <ClInclude Include="Day03_2020.h" />
-    <ClInclude Include="Day04_2020.h" />
-    <ClInclude Include="Day05_2020.h" />
-    <ClInclude Include="Day06_2020.h" />
-    <ClInclude Include="Day16_2020.h" />
-    <ClInclude Include="Day17_2020.h" />
-    <ClInclude Include="Day18_2020.h" />
-    <ClInclude Include="Day19_2020.h" />
-    <ClInclude Include="Day20_2020.h" />
-    <ClInclude Include="Day21_2020.h" />
-    <ClInclude Include="Day22_2020.h" />
-    <ClInclude Include="Day23_2020.h" />
-    <ClInclude Include="Day24_2020.h" />
     <ClInclude Include="DayNone.h" />
     <ClInclude Include="Deck.h" />
     <ClInclude Include="InputExtractor.h" />
@@ -295,6 +298,10 @@
     <Text Include="2020\Input\day24_data_simple.txt" />
     <Text Include="2020\Input\day25_data.txt" />
     <Text Include="2020\Input\day25_data_simple.txt" />
+    <Text Include="Input\2022\Day01_data.txt" />
+    <Text Include="Input\2022\Day01_data_simple.txt" />
+    <Text Include="Input\2022\Day02_data.txt" />
+    <Text Include="Input\2022\Day02_data_simple.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

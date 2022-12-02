@@ -37,11 +37,20 @@
     <Filter Include="2020\Input">
       <UniqueIdentifier>{226b9c6a-4318-4d1c-b79e-63f2b84cc7a9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\2022">
+      <UniqueIdentifier>{3a496a1c-9579-40f9-85cb-db51e4093828}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\2022">
+      <UniqueIdentifier>{ddd2f98d-bbfe-4ba7-8aef-615014db9c8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{01af07de-32e0-4e77-a750-e9e9f4a742a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input\2022">
+      <UniqueIdentifier>{dc72bd25-11a6-4418-a101-3edb503e5fbc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Day.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -66,59 +75,65 @@
     <ClCompile Include="2020\Calender.cpp">
       <Filter>Source Files\2020</Filter>
     </ClCompile>
-    <ClCompile Include="Day02_2020.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Day01_2020.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="RegularExpressions.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Day03_2020.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Day16_2020.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Day04_2020.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Day17_2020.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Day05_2020.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Day06_2020.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Day18_2020.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Day19_2020.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Day20_2020.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CameraView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Day21_2020.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Day22_2020.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Day23_2020.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Day24_2020.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Deck.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="2020\Day01_2020.cpp">
+      <Filter>Source Files\2020</Filter>
+    </ClCompile>
+    <ClCompile Include="2020\Day03_2020.cpp">
+      <Filter>Source Files\2020</Filter>
+    </ClCompile>
+    <ClCompile Include="2020\Day04_2020.cpp">
+      <Filter>Source Files\2020</Filter>
+    </ClCompile>
+    <ClCompile Include="2020\Day05_2020.cpp">
+      <Filter>Source Files\2020</Filter>
+    </ClCompile>
+    <ClCompile Include="2020\Day06_2020.cpp">
+      <Filter>Source Files\2020</Filter>
+    </ClCompile>
+    <ClCompile Include="2020\Day16_2020.cpp">
+      <Filter>Source Files\2020</Filter>
+    </ClCompile>
+    <ClCompile Include="2020\Day17_2020.cpp">
+      <Filter>Source Files\2020</Filter>
+    </ClCompile>
+    <ClCompile Include="2020\Day18_2020.cpp">
+      <Filter>Source Files\2020</Filter>
+    </ClCompile>
+    <ClCompile Include="2020\Day19_2020.cpp">
+      <Filter>Source Files\2020</Filter>
+    </ClCompile>
+    <ClCompile Include="2020\Day20_2020.cpp">
+      <Filter>Source Files\2020</Filter>
+    </ClCompile>
+    <ClCompile Include="2020\Day21_2020.cpp">
+      <Filter>Source Files\2020</Filter>
+    </ClCompile>
+    <ClCompile Include="2020\Day22_2020.cpp">
+      <Filter>Source Files\2020</Filter>
+    </ClCompile>
+    <ClCompile Include="2020\Day23_2020.cpp">
+      <Filter>Source Files\2020</Filter>
+    </ClCompile>
+    <ClCompile Include="2020\Day24_2020.cpp">
+      <Filter>Source Files\2020</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="2022\Day01_2022.cpp">
+      <Filter>Source Files\2022</Filter>
+    </ClCompile>
+    <ClCompile Include="2022\Day02_2022.cpp">
+      <Filter>Source Files\2022</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -143,59 +158,65 @@
     <ClInclude Include="2020\Calender.h">
       <Filter>Header Files\2020</Filter>
     </ClInclude>
-    <ClInclude Include="Day02_2020.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Day01_2020.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="RegularExpressions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Day03_2020.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Day16_2020.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Day04_2020.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Day17_2020.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Day05_2020.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Day06_2020.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Day18_2020.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Day19_2020.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Day20_2020.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CameraView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Day21_2020.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Day22_2020.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Day23_2020.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Day24_2020.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Deck.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="2020\Day02_2020.h">
+      <Filter>Header Files\2020</Filter>
+    </ClInclude>
+    <ClInclude Include="2020\Day03_2020.h">
+      <Filter>Header Files\2020</Filter>
+    </ClInclude>
+    <ClInclude Include="2020\Day04_2020.h">
+      <Filter>Header Files\2020</Filter>
+    </ClInclude>
+    <ClInclude Include="2020\Day05_2020.h">
+      <Filter>Header Files\2020</Filter>
+    </ClInclude>
+    <ClInclude Include="2020\Day06_2020.h">
+      <Filter>Header Files\2020</Filter>
+    </ClInclude>
+    <ClInclude Include="2020\Day16_2020.h">
+      <Filter>Header Files\2020</Filter>
+    </ClInclude>
+    <ClInclude Include="2020\Day17_2020.h">
+      <Filter>Header Files\2020</Filter>
+    </ClInclude>
+    <ClInclude Include="2020\Day18_2020.h">
+      <Filter>Header Files\2020</Filter>
+    </ClInclude>
+    <ClInclude Include="2020\Day19_2020.h">
+      <Filter>Header Files\2020</Filter>
+    </ClInclude>
+    <ClInclude Include="2020\Day20_2020.h">
+      <Filter>Header Files\2020</Filter>
+    </ClInclude>
+    <ClInclude Include="2020\Day21_2020.h">
+      <Filter>Header Files\2020</Filter>
+    </ClInclude>
+    <ClInclude Include="2020\Day22_2020.h">
+      <Filter>Header Files\2020</Filter>
+    </ClInclude>
+    <ClInclude Include="2020\Day23_2020.h">
+      <Filter>Header Files\2020</Filter>
+    </ClInclude>
+    <ClInclude Include="2020\Day24_2020.h">
+      <Filter>Header Files\2020</Filter>
+    </ClInclude>
+    <ClInclude Include="2022\Day01_2022.h">
+      <Filter>Header Files\2022</Filter>
+    </ClInclude>
+    <ClInclude Include="2020\Day01_2020.h">
+      <Filter>Header Files\2020</Filter>
+    </ClInclude>
+    <ClInclude Include="2022\Day02_2022.h">
+      <Filter>Header Files\2022</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -498,6 +519,18 @@
     </Text>
     <Text Include="2019\Input\day25_data_simple.txt">
       <Filter>2019\Input</Filter>
+    </Text>
+    <Text Include="Input\2022\Day01_data.txt">
+      <Filter>Input\2022</Filter>
+    </Text>
+    <Text Include="Input\2022\Day01_data_simple.txt">
+      <Filter>Input\2022</Filter>
+    </Text>
+    <Text Include="Input\2022\Day02_data.txt">
+      <Filter>Input\2022</Filter>
+    </Text>
+    <Text Include="Input\2022\Day02_data_simple.txt">
+      <Filter>Input\2022</Filter>
     </Text>
   </ItemGroup>
 </Project>

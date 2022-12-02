@@ -1,5 +1,5 @@
 #include "Day20_2020.h"
-#include "CameraView.h"
+#include "../CameraView.h"
 #include <math.h>
 #include <algorithm>
 #include <map>

@@ -1,5 +1,5 @@
 #include "Day16_2020.h"
-#include "RegularExpressions.h"
+#include "../RegularExpressions.h"
 
 bool AOC20::Day16::IsValidTicket(const std::string ticket, std::vector<size_t>& failedOn) const
 {

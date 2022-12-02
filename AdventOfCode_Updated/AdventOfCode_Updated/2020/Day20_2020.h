@@ -1,6 +1,6 @@
 #pragma once
-#include "Day.h"
-#include "CameraView.h"
+#include "../Day.h"
+#include "../CameraView.h"
 
 namespace AOC20
 {

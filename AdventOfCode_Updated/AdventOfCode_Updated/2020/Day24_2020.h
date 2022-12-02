@@ -1,16 +1,16 @@
 #pragma once
-#include "Day.h"
+#include "../Day.h"
 
 namespace AOC20
 {
-	class Day06 : public Day
+	class Day24 : public Day
 	{
 	public:
-		Day06();
+		Day24();
 
 		void SolvePartOne(bool simpleData);
 		void SolvePartTwo(bool simpleData);
 
-		~Day06();
+		~Day24();
 	};
 }

@@ -1,6 +1,6 @@
 #pragma once
-#include "Day.h"
-#include "Deck.h"
+#include "../Day.h"
+#include "../Deck.h"
 
 namespace AOC20
 {
