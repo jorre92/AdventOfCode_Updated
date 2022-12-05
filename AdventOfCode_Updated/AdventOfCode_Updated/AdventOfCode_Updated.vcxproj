@@ -159,6 +159,7 @@
     <ClCompile Include="2020\Day24_2020.cpp" />
     <ClCompile Include="2022\Day01_2022.cpp" />
     <ClCompile Include="2022\Day02_2022.cpp" />
+    <ClCompile Include="2022\Day03_2022.cpp" />
     <ClCompile Include="CalenderDay.h" />
     <ClCompile Include="CameraView.cpp" />
     <ClCompile Include="Day.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="2020\Day24_2020.h" />
     <ClInclude Include="2022\Day01_2022.h" />
     <ClInclude Include="2022\Day02_2022.h" />
+    <ClInclude Include="2022\Day03_2022.h" />
     <ClInclude Include="CameraView.h" />
     <ClInclude Include="Day.h" />
     <ClInclude Include="DayNone.h" />
@@ -302,6 +304,12 @@
     <Text Include="Input\2022\Day01_data_simple.txt" />
     <Text Include="Input\2022\Day02_data.txt" />
     <Text Include="Input\2022\Day02_data_simple.txt" />
+    <Text Include="Input\2022\Day03_data.txt" />
+    <Text Include="Input\2022\Day03_data_simple.txt" />
+    <Text Include="Input\2022\Day04_data.txt" />
+    <Text Include="Input\2022\Day04_data_simple.txt" />
+    <Text Include="Input\2022\Day05_data.txt" />
+    <Text Include="Input\2022\Day05_data_simple.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

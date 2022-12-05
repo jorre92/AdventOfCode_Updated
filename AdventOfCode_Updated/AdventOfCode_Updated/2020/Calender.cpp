@@ -3,6 +3,7 @@
 #include "../DayNone.h"
 #include "../2022/Day01_2022.h"
 #include "../2022/Day02_2022.h"
+#include "../2022/Day03_2022.h"
 
 Day* AOC20::Calander::CreateSolution(AOCCORE::CalenderDay calenderDay) const
 {
@@ -15,6 +16,9 @@ Day* AOC20::Calander::CreateSolution(AOCCORE::CalenderDay calenderDay) const
 		break; 
 	case AOCCORE::CalenderDay::Two:
 		day = new AOC22::Day02();
+		break;
+	case AOCCORE::CalenderDay::Three:
+		day = new AOC22::Day03();
 		break;
 	default:
 		day = new DayNone();

@@ -135,6 +135,9 @@
     <ClCompile Include="2022\Day02_2022.cpp">
       <Filter>Source Files\2022</Filter>
     </ClCompile>
+    <ClCompile Include="2022\Day03_2022.cpp">
+      <Filter>Source Files\2022</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Day.h">
@@ -216,6 +219,9 @@
       <Filter>Header Files\2020</Filter>
     </ClInclude>
     <ClInclude Include="2022\Day02_2022.h">
+      <Filter>Header Files\2022</Filter>
+    </ClInclude>
+    <ClInclude Include="2022\Day03_2022.h">
       <Filter>Header Files\2022</Filter>
     </ClInclude>
   </ItemGroup>
@@ -530,6 +536,24 @@
       <Filter>Input\2022</Filter>
     </Text>
     <Text Include="Input\2022\Day02_data_simple.txt">
+      <Filter>Input\2022</Filter>
+    </Text>
+    <Text Include="Input\2022\Day03_data.txt">
+      <Filter>Input\2022</Filter>
+    </Text>
+    <Text Include="Input\2022\Day03_data_simple.txt">
+      <Filter>Input\2022</Filter>
+    </Text>
+    <Text Include="Input\2022\Day04_data.txt">
+      <Filter>Input\2022</Filter>
+    </Text>
+    <Text Include="Input\2022\Day04_data_simple.txt">
+      <Filter>Input\2022</Filter>
+    </Text>
+    <Text Include="Input\2022\Day05_data.txt">
+      <Filter>Input\2022</Filter>
+    </Text>
+    <Text Include="Input\2022\Day05_data_simple.txt">
       <Filter>Input\2022</Filter>
     </Text>
   </ItemGroup>
