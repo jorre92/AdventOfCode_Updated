@@ -160,6 +160,8 @@
     <ClCompile Include="2022\Day01_2022.cpp" />
     <ClCompile Include="2022\Day02_2022.cpp" />
     <ClCompile Include="2022\Day03_2022.cpp" />
+    <ClCompile Include="2022\Day04_2022.cpp" />
+    <ClCompile Include="2022\Day05_2022.cpp" />
     <ClCompile Include="CalenderDay.h" />
     <ClCompile Include="CameraView.cpp" />
     <ClCompile Include="Day.cpp" />
@@ -192,6 +194,8 @@
     <ClInclude Include="2022\Day01_2022.h" />
     <ClInclude Include="2022\Day02_2022.h" />
     <ClInclude Include="2022\Day03_2022.h" />
+    <ClInclude Include="2022\Day04_2022.h" />
+    <ClInclude Include="2022\Day05_2022.h" />
     <ClInclude Include="CameraView.h" />
     <ClInclude Include="Day.h" />
     <ClInclude Include="DayNone.h" />
