@@ -52,7 +52,7 @@ void AOC22::Day06::SolvePartTwo(bool simple)
 	std::string datastream;
 	input.NextRow(datastream);
 
-	for (size_t markerPoint = 0; markerPoint < datastream.size() - 14; markerPoint++)
+	for (size_t markerPoint = 0; markerPoint < datastream.size() - 13; markerPoint++)
 	{
 		std::string markerCheck = datastream.substr(markerPoint, 14);
 
