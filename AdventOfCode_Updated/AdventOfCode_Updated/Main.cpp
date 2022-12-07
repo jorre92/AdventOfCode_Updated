@@ -37,7 +37,7 @@ int main()
 {
 
 #ifdef DEBUG
-	EXECUTE::Exe(AOCCORE::CalenderDay::Six, false);
+	EXECUTE::Exe(AOCCORE::CalenderDay::Seven, false);
 #endif // DEBUG
 
 
