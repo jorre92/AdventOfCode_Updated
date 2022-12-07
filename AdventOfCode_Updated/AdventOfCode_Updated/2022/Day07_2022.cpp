@@ -58,16 +58,16 @@ void AOC22::dir::PrintDir(std::string prefix)
 	dir* currentDir;
 	currentDir = this;
 
-	std::cout << prefix << name << " (dir, size=" << TotalSizeOfDir() << ")" << std::endl;
+	std::cout << prefix << name << " (dir)" << std::endl;
 
 	for (auto dir : dirs)
 	{
-		dir.PrintDir(" " +prefix);
+		dir.PrintDir("  " + prefix);
 	}
 
 	for (auto file : files)
 	{
-		file.PrintFile(" " + prefix);
+		file.PrintFile("  " + prefix);
 	}
 }
 
@@ -144,8 +144,6 @@ void AOC22::Day07::SolvePartOne(bool simple)
 	{
 		struct dir myFileSystem = GenerateDir(cmdText);
 
-		//myFileSystem.PrintDir("- ");
-
 		auto size = myFileSystem.TotalSizeOfDirsUnder(100000);
 
 		std::cout << size << std::endl;
@@ -162,8 +160,6 @@ void AOC22::Day07::SolvePartTwo(bool simple)
 	if (input.NextBatch(cmdText))
 	{
 		struct dir myFileSystem = GenerateDir(cmdText);
-
-		//myFileSystem.PrintDir("- ");
 
 		auto size = myFileSystem.TotalSizeOfDir();
 
