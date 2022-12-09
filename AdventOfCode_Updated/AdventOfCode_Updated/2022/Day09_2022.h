@@ -1,10 +1,16 @@
 #pragma once
-#include <iostream>
+#include <unordered_set>
 
 #include "../Day.h"
 
 namespace AOC22
 {
+	template <typename T>
+	void hash_combine(std::size_t& seed, const T& val) 
+	{
+		seed ^= std::hash<T>()(val) + 0x9e3779b9 + (seed << 6) + (seed >> 2);
+	}
+
 	struct Position
 	{
 		int X = 0;
@@ -44,6 +50,15 @@ namespace AOC22
 			return *this;
 		}
 	};
+	
+	struct Position_hash {
+		size_t operator()(const Position& p) const {
+			std::size_t hash = 0;
+			hash_combine(hash, p.X);
+			hash_combine(hash, p.Y);
+			return hash;
+		}
+	};
 
 	struct Head
 	{
@@ -58,12 +73,12 @@ namespace AOC22
 	struct Tail
 	{
 		struct Position position;
-		std::vector<struct Position> history;
+		std::unordered_set<struct Position, struct Position_hash> history;
 
 		struct Tail(struct Position pos)
 		{
 			position = pos;
-			history.push_back(position);
+			history.insert(pos);
 
 		};
 
@@ -72,10 +87,7 @@ namespace AOC22
 			if (position != to)
 			{
 				position = to;
-				if (std::find(history.begin(), history.end(), position) == std::end(history))
-				{
-					history.push_back(position);
-				}
+				history.insert(to);
 			}
 			
 		}
