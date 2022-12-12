@@ -7,7 +7,7 @@ AOC22::Day12::Day12() : Day("Input//2022//day12_data.txt", "Input//2022//day12_d
 {
 }
 
-void AOC22::PathFinder::AddToCheckList(MapCordinate* center)
+void AOC22::PathFinder::AddToCheckList(MapCordinate* center, bool dir)
 {
 	for (int y = center->Y-1; y <= center->Y + 1; ++y)
 	{
@@ -20,36 +20,8 @@ void AOC22::PathFinder::AddToCheckList(MapCordinate* center)
 					if ((x == center->X && y != center->Y) || (x != center->X && y == center->Y))
 					{
 						auto checkAgainst = this->Map[y][x];
-						auto hightCheck = checkAgainst.Hight - center->Hight <= 1;
-						auto isGoal = (checkAgainst.Hight == '~' && center->Hight == 'z');
-						if ((checkAgainst.Parent == nullptr && hightCheck) || isGoal)
-						{
-							this->Map[y][x].Parent = center;
-							this->CheckList.push_back(&(this->Map[y][x]));
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-void AOC22::PathFinder::AddToCheckListGoDown(MapCordinate* center)
-{
-	for (int y = center->Y - 1; y <= center->Y + 1; ++y)
-	{
-		if (!(y == -1 || y == this->Map.size())) // is inside the map Y
-		{
-			for (int x = center->X - 1; x <= center->X + 1; ++x)
-			{
-				if (!(x == -1 || x == this->Map[y].size())) // is inside the map X
-				{
-					if ((x == center->X && y != center->Y) || (x != center->X && y == center->Y))
-					{
-						auto checkAgainst = this->Map[y][x];
-						auto hightCheck = center->Hight - checkAgainst.Hight <= 1;
-						auto isStart = (center->Hight == '~' && checkAgainst.Hight == 'z');
-						if ((checkAgainst.Parent == nullptr && hightCheck) || isStart)
+						auto hightCheck = dir ? checkAgainst.Hight - center->Hight <= 1 : center->Hight - checkAgainst.Hight <= 1;
+						if ((checkAgainst.Parent == nullptr && hightCheck))
 						{
 							this->Map[y][x].Parent = center;
 							this->CheckList.push_back(&(this->Map[y][x]));
@@ -95,7 +67,7 @@ void AOC22::Day12::ConstructMap(const std::vector<std::string>& mapData)
 	this->worldMap.End = &(this->worldMap.map[yEnd][xEnd]);
 
 	this->worldMap.Start->Hight = 'a';
-	this->worldMap.End->Hight = '~';
+	this->worldMap.End->Hight = 'z'+1;
 }
 
 void AOC22::Day12::SolvePartOne(bool simple)
@@ -116,7 +88,7 @@ void AOC22::Day12::SolvePartOne(bool simple)
 	while (pf.CheckList.size() > 0)
 	{
 		auto toCheck = pf.CheckList[0];
-		if (toCheck->Hight == '~')
+		if (toCheck->Hight == 'z' + 1)
 		{
 			size_t steps = 0;
 			auto step = pf.CheckList[0];
@@ -167,7 +139,7 @@ void AOC22::Day12::SolvePartTwo(bool simple)
 		{
 			size_t steps = 0;
 			auto step = pf.CheckList[0];
-			while (step->Hight != '~')
+			while (step->Hight != 'z' + 1)
 			{
 				step->Hight = '*';
 				steps++;
@@ -176,7 +148,7 @@ void AOC22::Day12::SolvePartTwo(bool simple)
 			std::cout << "found it " << steps << std::endl;
 			break;
 		}
-		pf.AddToCheckListGoDown(pf.CheckList[0]);
+		pf.AddToCheckList(pf.CheckList[0], false);
 		pf.CheckList.erase(pf.CheckList.begin());
 	}
 

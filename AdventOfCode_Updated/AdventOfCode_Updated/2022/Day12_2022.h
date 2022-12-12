@@ -24,8 +24,7 @@ namespace AOC22
 		std::vector<MapCordinate*> CheckList;
 		std::vector<MapCordinate> OpenList;
 
-		void AddToCheckList(MapCordinate*);
-		void AddToCheckListGoDown(MapCordinate*);
+		void AddToCheckList(MapCordinate*, bool = true);
 	};
 
 	class Day12 : public Day
