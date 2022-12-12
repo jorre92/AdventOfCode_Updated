@@ -8,7 +8,7 @@ AOC22::Day06::Day06() : Day("Input//2022//day06_data.txt", "Input//2022//day06_d
 	
 }
 
-int AOC22::Day06::findMarker(const std::string& dataStream, size_t messageSize)
+size_t AOC22::Day06::findMarker(const std::string& dataStream, size_t messageSize)
 {
 	for (size_t markerPoint = 0; markerPoint < dataStream.size() - messageSize - 1; markerPoint++)
 	{
@@ -45,7 +45,7 @@ void AOC22::Day06::SolvePartOne(bool simple)
 	std::string datastream;
 	input.NextRow(datastream);
 
-	printf("1) (%i)\n", findMarker(datastream, 4));
+	printf("1) (%llu)\n", findMarker(datastream, 4));
 }
 
 
@@ -56,7 +56,7 @@ void AOC22::Day06::SolvePartTwo(bool simple)
 	std::string datastream;
 	input.NextRow(datastream);
 
-	printf("2) (%i)\n", findMarker(datastream, 14));
+	printf("2) (%llu)\n", findMarker(datastream, 14));
 }
 
 AOC22::Day06::~Day06()

@@ -44,7 +44,7 @@ int main()
 
 
 #ifndef DEBUG
-	for (int i = 0; i < AOCCORE::CalenderDay::Thirteen; ++i)
+	for (int i = 0; i < AOCCORE::CalenderDay::Fourteen; ++i)
 	{
 		EXECUTE::Exe((AOCCORE::CalenderDay)i, false);
 	}

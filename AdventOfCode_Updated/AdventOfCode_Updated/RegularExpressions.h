@@ -4,7 +4,7 @@
 
 namespace AOCCORE
 {
-	static class RegularExpressions
+	class RegularExpressions
 	{
 	public:
 		static bool RunSearch(const std::string text, const std::string regEx, std::string& result);

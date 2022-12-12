@@ -7,7 +7,7 @@ namespace AOC22
 	class Day06 : public Day
 	{
 	private:
-		int findMarker(const std::string&, size_t);
+		size_t findMarker(const std::string&, size_t);
 		bool isUnique(const std::string&);
 	public:
 		Day06();

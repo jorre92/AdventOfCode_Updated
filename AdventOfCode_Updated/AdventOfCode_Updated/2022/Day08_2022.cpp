@@ -9,8 +9,8 @@ AOC22::Day08::Day08() : Day("Input//2022//day08_data.txt", "Input//2022//day08_d
 bool AOC22::Day08::IsSeen(const std::vector<std::string>& map, int xPos, int yPos)
 {
 	int min = 0;
-	int maxY = map.size() - 1;
-	int maxX = map[yPos].size() - 1;
+	int maxY = static_cast<int>(map.size()) - 1;
+	int maxX = static_cast<int>(map[yPos].size()) - 1;
 
 	bool seen = true;
 
@@ -78,8 +78,8 @@ bool AOC22::Day08::IsSeen(const std::vector<std::string>& map, int xPos, int yPo
 int AOC22::Day08::SenicScore(const std::vector<std::string>& map, int xPos, int yPos)
 {
 	int min = 0;
-	int maxY = map.size() - 1;
-	int maxX = map[yPos].size() - 1;
+	int maxY = static_cast<int>(map.size()) - 1;
+	int maxX = static_cast<int>(map[yPos].size()) - 1;
 	char myTree = map[yPos][xPos];
 
 	int upScore = 0, downScore = 0, leftScore = 0, rightScore = 0;
