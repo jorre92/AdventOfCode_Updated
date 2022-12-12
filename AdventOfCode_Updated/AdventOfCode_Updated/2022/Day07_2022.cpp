@@ -10,9 +10,9 @@ AOC22::dir AOC22::Day07::GenerateDir(const std::vector<std::string>& cmdText)
 	std::string fileRegEx = "(\\d+)\\s+(.*)";
 
 	dir fileSystem;
-	dir* currentPosition = 0;
+	dir* currentPosition = NULL;
 
-	for (auto row : cmdText)
+	for (auto& row : cmdText)
 	{
 		std::string dirName;
 		std::vector<std::string> fileData;
@@ -38,6 +38,12 @@ AOC22::dir AOC22::Day07::GenerateDir(const std::vector<std::string>& cmdText)
 		}
 		else if (AOCCORE::RegularExpressions::RunSearch(row, fileRegEx, fileData))
 		{
+			if (currentPosition == NULL)
+			{
+				printf("AWWW FUCK!\n");
+				exit(-1);
+			}
+
 			file newFile;
 			newFile.name = fileData[2];
 			newFile.size = std::stoi(fileData[1]);
@@ -60,12 +66,12 @@ void AOC22::dir::PrintDir(std::string prefix)
 
 	std::cout << prefix << name << " (dir)" << std::endl;
 
-	for (auto dir : dirs)
+	for (auto& dir : dirs)
 	{
 		dir.PrintDir("  " + prefix);
 	}
 
-	for (auto file : files)
+	for (auto& file : files)
 	{
 		file.PrintFile("  " + prefix);
 	}
@@ -75,7 +81,7 @@ size_t AOC22::dir::TotalSizeOfFiles()
 {
 	size_t size = 0;
 
-	for (auto file : files)
+	for (auto& file : files)
 	{
 		size += file.size;
 	}
@@ -85,10 +91,10 @@ size_t AOC22::dir::TotalSizeOfFiles()
 
 size_t AOC22::dir::TotalSizeOfDir()
 {
-	auto dirSize = 0;
-	auto fileSize = TotalSizeOfFiles();
+	size_t dirSize = 0;
+	size_t fileSize = TotalSizeOfFiles();
 
-	for (auto dir : dirs)
+	for (auto& dir : dirs)
 	{
 		dirSize += dir.TotalSizeOfDir();
 	}
@@ -98,15 +104,15 @@ size_t AOC22::dir::TotalSizeOfDir()
 
 size_t AOC22::dir::TotalSizeOfDirsUnder(size_t maxSize)
 {
-	auto returnSize = 0;
-	auto thisDirSize = TotalSizeOfDir();
+	size_t returnSize = 0;
+	size_t thisDirSize = TotalSizeOfDir();
 	
 	if (thisDirSize > maxSize)
 	{
 		thisDirSize = 0;
 	}
 
-	for (auto dir : dirs)
+	for (auto& dir : dirs)
 	{
 		returnSize += dir.TotalSizeOfDirsUnder(maxSize);
 	}
@@ -119,7 +125,7 @@ std::vector<AOC22::dir> AOC22::dir::GetAllDirs()
 	std::vector<dir> allDirs;
 	allDirs.push_back(*this);
 
-	for (auto dir : dirs)
+	for (auto& dir : dirs)
 	{
 		auto moreDirs = dir.GetAllDirs();
 
@@ -146,7 +152,7 @@ void AOC22::Day07::SolvePartOne(bool simple)
 
 		auto size = myFileSystem.TotalSizeOfDirsUnder(100000);
 
-		std::cout << size << std::endl;
+		printf("1) (%llu)\n", size);
 	}
 }
 
@@ -154,8 +160,9 @@ void AOC22::Day07::SolvePartOne(bool simple)
 void AOC22::Day07::SolvePartTwo(bool simple)
 {
 	auto input = Day::Input(simple);
-
 	std::vector<std::string> cmdText;
+
+	const size_t maxSizeOfFileSystem = static_cast<size_t>(70000000 - 30000000);
 
 	if (input.NextBatch(cmdText))
 	{
@@ -163,16 +170,14 @@ void AOC22::Day07::SolvePartTwo(bool simple)
 
 		auto size = myFileSystem.TotalSizeOfDir();
 
-		size_t maxSizeOfFileSystem = 70000000 - 30000000;
+		
 		size_t toRemoveMin = size - maxSizeOfFileSystem;
 
-		std::cout << "Need to remove at least : " << size - maxSizeOfFileSystem << std::endl;
-
 		auto allDirs = myFileSystem.GetAllDirs();
-		auto currentDirToRemove = myFileSystem;
+		auto& currentDirToRemove = myFileSystem;
 		size_t currentSmallest = currentDirToRemove.TotalSizeOfDir();
 
-		for (auto dir : allDirs)
+		for (auto& dir : allDirs)
 		{
 			auto sizeOfDir = dir.TotalSizeOfDir();
 			if (sizeOfDir > toRemoveMin && sizeOfDir < currentSmallest)
@@ -182,7 +187,7 @@ void AOC22::Day07::SolvePartTwo(bool simple)
 			}
 		}
 
-		std::cout << currentDirToRemove.name << " - " << currentSmallest << std::endl;
+		printf("2) (%llu)\n", currentSmallest);
 	}
 
 }

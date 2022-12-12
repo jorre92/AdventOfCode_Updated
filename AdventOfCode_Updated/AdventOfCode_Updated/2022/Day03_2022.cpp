@@ -39,9 +39,9 @@ bool AOC22::Day03::commonChars(const std::string& firstComponent, const std::str
 	return true;
 }
 
-size_t AOC22::Day03::Score(const char& character)
+int AOC22::Day03::Score(const char& character)
 {
-	size_t score = 0;
+	int score = 0;
 
 	if (std::islower(character))
 	{
@@ -59,7 +59,7 @@ void AOC22::Day03::SolvePartOne(bool simple)
 {
 	auto input = Day::Input(simple);
 
-	size_t score = 0;
+	int score = 0;
 
 	for (std::string row; input.NextRow(row);)
 	{
@@ -71,13 +71,13 @@ void AOC22::Day03::SolvePartOne(bool simple)
 		score += Score(common);
 	}
 
-	std::cout << score << std::endl;
+	printf("1) (%i)\n", score);
 }
 
 void AOC22::Day03::SolvePartTwo(bool simple)
 {
 	auto input = Day::Input(simple);
-	size_t score = 0;
+	int score = 0;
 
 	for (std::string first; input.NextRow(first);)
 	{
@@ -91,11 +91,10 @@ void AOC22::Day03::SolvePartTwo(bool simple)
 			commonChar(matched, third, group);
 
 			score += Score(group);
-
 		}
 	}
 
-	std::cout << score << std::endl;
+	printf("2) (%i)\n", score);
 }
 
 AOC22::Day03::~Day03()

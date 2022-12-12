@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <chrono>
+#include <type_traits>
 
 #include "Day.h"
 #include "2020/Calender.h"
@@ -26,26 +27,26 @@ namespace EXECUTE
 		auto durationPartOne = std::chrono::duration_cast<std::chrono::milliseconds>(endPartOne - startPartOne);
 		auto durationPartTwo = std::chrono::duration_cast<std::chrono::milliseconds>(endPartTwo - startPartTwo);
 
-		printf("Solution time part one/two: %llu/%llu (ms)\n", durationPartOne.count(), durationPartTwo.count());
+		printf("Running time (%llu ms/%llu ms)\n", durationPartOne.count(), durationPartTwo.count());
 
 		calender.DestroySolution(day);
 	}
 }
 
-#define DEBUG
+//#define DEBUG
 
 int main()
 {
 
 #ifdef DEBUG
-	EXECUTE::Exe(AOCCORE::CalenderDay::Twelve, false);
+	EXECUTE::Exe(AOCCORE::CalenderDay::Eleven, true);
 #endif // DEBUG
 
 
 #ifndef DEBUG
-	for (int i = 0; i < AOCCORE::CalenderDay::NumberOfDays; ++i)
+	for (int i = 0; i < AOCCORE::CalenderDay::Thirteen; ++i)
 	{
-		EXECUTE::Exe((AOCCORE::CalenderDay)i, true);
+		EXECUTE::Exe((AOCCORE::CalenderDay)i, false);
 	}
 #endif // !DEBUG
 

@@ -7,7 +7,7 @@ namespace AOC22
 	struct file
 	{
 		std::string name;
-		size_t size;
+		size_t size = 0;
 
 		void PrintFile(std::string);
 	};

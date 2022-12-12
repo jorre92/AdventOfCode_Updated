@@ -44,7 +44,7 @@ void AOC22::Day05::SolvePartOne(bool simple)
 		cargoArea.Move(std::stoi(instructions[0]), std::stoi(instructions[1]) - 1, std::stoi(instructions[2]) - 1);
 	}
 
-	cargoArea.PrintTop();
+	printf("1) (%s)\n", cargoArea.ToString().c_str());
 }
 
 
@@ -65,7 +65,7 @@ void AOC22::Day05::SolvePartTwo(bool simple)
 		cargoArea.AdvancedMove(std::stoi(instructions[0]), std::stoi(instructions[1]) - 1, std::stoi(instructions[2]) - 1);
 	}
 
-	cargoArea.PrintTop();
+	printf("2) (%s)\n", cargoArea.ToString().c_str());
 }
 
 AOC22::Day05::~Day05()
@@ -115,19 +115,20 @@ void AOC22DAY05::cargoArea::Add(int pile, char cargo)
 	this->cargoPiles[pile].push_back(cargo);
 }
 
-void AOC22DAY05::cargoArea::PrintTop()
+std::string AOC22DAY05::cargoArea::ToString()
 {
-	for (auto pile : cargoPiles)
+	std::string returnValue = "";
+	for (auto& pile : cargoPiles)
 	{
 		if (!pile.empty())
 		{
-			std::cout << pile.back();
+			returnValue += pile.back();
 		}
 		else
 		{
-			std::cout << " ";
+			returnValue += " ";
 		}
 	}
 
-	std::cout << std::endl;
+	return returnValue;
 }

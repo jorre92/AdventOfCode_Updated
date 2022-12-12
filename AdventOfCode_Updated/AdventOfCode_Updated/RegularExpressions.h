@@ -7,9 +7,9 @@ namespace AOCCORE
 	static class RegularExpressions
 	{
 	public:
-		bool static RunSearch(const std::string, const std::string, std::string&);
-		bool static RunSearch(const std::string, const std::string, std::vector<std::string>&);
-		bool static RunIteratorSearch(const std::string, const std::string, std::vector<std::string>&);
+		static bool RunSearch(const std::string text, const std::string regEx, std::string& result);
+		static bool RunSearch(const std::string text, const std::string regEx, std::vector<std::string>& results);
+		static bool RunIteratorSearch(const std::string text, const std::string regEx, std::vector<std::string>& results);
 	};
 }
 

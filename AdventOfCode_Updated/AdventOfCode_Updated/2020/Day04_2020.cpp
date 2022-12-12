@@ -95,7 +95,7 @@ void AOC20::Day04::SolvePartOne(bool simpleData)
 		}
 	}
 
-	printf("[%s-%s] : Valid passports {%d}.\n", _name.c_str(), __func__, validPassports);
+	printf("[%s-%s] : Valid passports {%llu}.\n", _name.c_str(), __func__, validPassports);
 }
 
 void AOC20::Day04::SolvePartTwo(bool simpleData)
@@ -129,7 +129,7 @@ void AOC20::Day04::SolvePartTwo(bool simpleData)
 		}
 	}
 
-	printf("[%s-%s] : Valid passports {%d}.\n", _name.c_str(), __func__, validPassports);
+	printf("[%s-%s] : Valid passports {%llu}.\n", _name.c_str(), __func__, validPassports);
 }
 
 AOC20::Day04::~Day04()

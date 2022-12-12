@@ -7,15 +7,15 @@ namespace AOC22
 	struct MapCordinate
 	{
 		MapCordinate* Parent = this;
-		int X, Y;
-		char Hight;
+		int X = 0, Y = 0;
+		char Hight = 0;
 	};
 
 	struct Map
 	{
 		std::vector<std::vector<MapCordinate>> map;
-		MapCordinate* Start;
-		MapCordinate* End;
+		MapCordinate* Start = 0;
+		MapCordinate* End = 0;
 	};
 
 	struct PathFinder

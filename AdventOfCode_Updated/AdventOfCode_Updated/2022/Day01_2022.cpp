@@ -32,7 +32,7 @@ void AOC22::Day01::SolvePartOne(bool simple)
 		}
 	}
 
-	std::cout << mostCalories << std::endl;
+	printf("1) (%i)\n", mostCalories);
 }
 
 void AOC22::Day01::SolvePartTwo(bool simple)
@@ -62,7 +62,7 @@ void AOC22::Day01::SolvePartTwo(bool simple)
 
 	auto topThreeCalories = caloriesPerElf[0] + caloriesPerElf[1] + caloriesPerElf[2];
 
-	std::cout << topThreeCalories << std::endl;
+	printf("2) (%i)\n", topThreeCalories);
 }
 
 AOC22::Day01::~Day01()

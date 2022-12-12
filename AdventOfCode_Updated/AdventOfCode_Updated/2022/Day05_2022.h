@@ -13,7 +13,7 @@ namespace AOC22DAY05
 		void Move(int, int, int);
 		void AdvancedMove(int, int, int);
 		void Add(int, char);
-		void PrintTop();
+		std::string ToString();
 	};
 }
 

@@ -33,7 +33,7 @@ AOC22::Monkey AOC22::Day11::CreateMonkey(const std::vector<std::string>& batch)
 	}
 
 	newMonkey.modifier = modifyString.substr(2);
-	AOCCORE::RegularExpressions::RunSearch(batch[3], "-?[0-9]+", result);
+	AOCCORE::RegularExpressions::RunSearch(batch[3], "Test: divisible by (-?[0-9]+)", result);
 	newMonkey.testDivisible = std::stoi(result);
 	newMonkey.throwToMonkeyIndexTrue = std::stoi(batch[4].substr(batch[4].find_last_of(' ')+1));
 	newMonkey.throwToMonkeyIndexFalse = std::stoi(batch[5].substr(batch[5].find_last_of(' ')+1));
@@ -43,7 +43,6 @@ AOC22::Monkey AOC22::Day11::CreateMonkey(const std::vector<std::string>& batch)
 
 void AOC22::Day11::SolvePartOne(bool simple)
 {
-	uint64_t mod = 1;
 	auto input = Day::Input(simple);
 
 	std::vector<Monkey> monkeys;
@@ -53,7 +52,6 @@ void AOC22::Day11::SolvePartOne(bool simple)
 	{
 		auto m = CreateMonkey(batch);
 		monkeys.push_back(m);
-		mod *= m.testDivisible;
 	}
 
 	for (size_t i = 0; i < 20; ++i)
@@ -64,16 +62,14 @@ void AOC22::Day11::SolvePartOne(bool simple)
 		}
 	}
 	
-	std::vector<size_t> monkeyBusiness;
+	std::vector<uint64_t> monkeyBusiness;
 	for (auto m : monkeys)
 	{
 		monkeyBusiness.push_back(m.inspectedItems);
-		printf("Items inspected : %llu\n", m.inspectedItems);
 	}
+	std::sort(monkeyBusiness.begin(), monkeyBusiness.end(), std::greater<uint64_t>());
 
-	std::sort(monkeyBusiness.begin(), monkeyBusiness.end(), std::greater<size_t>());
-
-	std::cout << monkeyBusiness[0] * monkeyBusiness[1] << std::endl;
+	printf("1) (%llu)\n", (monkeyBusiness[0] * monkeyBusiness[1]));
 }
 
 void AOC22::Day11::SolvePartTwo(bool simple)
@@ -95,20 +91,18 @@ void AOC22::Day11::SolvePartTwo(bool simple)
 	{
 		for (auto& m : monkeys)
 		{
-			m.InspectItems(monkeys, 1, mod);
+			m.InspectItems(monkeys, 0, mod);
 		}
 	}
 
-	std::vector<size_t> monkeyBusiness;
+	std::vector<uint64_t> monkeyBusiness;
 	for (auto m : monkeys)
 	{
 		monkeyBusiness.push_back(m.inspectedItems);
-		printf("Items inspected : %llu\n", m.inspectedItems);
 	}
 
-	std::sort(monkeyBusiness.begin(), monkeyBusiness.end(), std::greater<size_t>());
-
-	std::cout << monkeyBusiness[0] * monkeyBusiness[1] << std::endl;
+	std::sort(monkeyBusiness.begin(), monkeyBusiness.end(), std::greater<uint64_t>());
+	printf("2) (%llu)\n", (monkeyBusiness[0] * monkeyBusiness[1]));
 }
 
 AOC22::Day11::~Day11()

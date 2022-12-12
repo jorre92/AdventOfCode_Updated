@@ -8,7 +8,7 @@ namespace AOC22
 	private:
 		bool commonChar(const std::string&, const std::string&, char&);
 		bool commonChars(const std::string&, const std::string&, std::string&);
-		size_t Score(const char&);
+		int Score(const char&);
 	public:
 		Day03();
 

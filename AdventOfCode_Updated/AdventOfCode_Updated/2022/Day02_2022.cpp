@@ -34,7 +34,7 @@ void AOC22::Day02::SolvePartOne(bool simple)
 		}
 	}
 
-	std::cout << score << std::endl;
+	printf("1) (%i)\n", score);
 }
 
 void AOC22::Day02::SolvePartTwo(bool simple)
@@ -68,7 +68,7 @@ void AOC22::Day02::SolvePartTwo(bool simple)
 		}
 	}
 
-	std::cout << score << std::endl;
+	printf("2) (%i)\n", score);
 }
 
 AOC22::Day02::~Day02()

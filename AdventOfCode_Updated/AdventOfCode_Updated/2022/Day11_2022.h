@@ -17,9 +17,9 @@ namespace AOC22
 		std::vector<uint64_t> items;
 		AOC22::operation operation;
 		std::string modifier;
-		uint64_t testDivisible;
-		size_t throwToMonkeyIndexTrue;
-		size_t throwToMonkeyIndexFalse;
+		uint64_t testDivisible = 1;
+		size_t throwToMonkeyIndexTrue = 0;
+		size_t throwToMonkeyIndexFalse = 0;
 
 		void InspectItems(std::vector<struct Monkey>& monkies, uint64_t div, uint64_t mod)
 		{
@@ -29,7 +29,7 @@ namespace AOC22
 				// do calc
 				if (mod == 0)
 				{
-					items[0] = (DoCalc(items[0]) / div);
+					items[0] = DoCalc(items[0]) / div;
 				}
 				else
 				{

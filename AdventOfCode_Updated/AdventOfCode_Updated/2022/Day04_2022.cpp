@@ -10,8 +10,7 @@ AOC22::Day04::Day04() : Day("Input//2022//day04_data.txt", "Input//2022//day04_d
 void AOC22::Day04::SolvePartOne(bool simple)
 {
 	auto input = Day::Input(simple);
-
-	size_t score = 0;
+	int score = 0;
 
 	for (std::string row; input.NextRow(row);)
 	{
@@ -29,14 +28,13 @@ void AOC22::Day04::SolvePartOne(bool simple)
 		}
 	}
 
-	std::cout << score << std::endl;
+	printf("1) (%i)\n", score);
 }
 
 void AOC22::Day04::SolvePartTwo(bool simple)
 {
 	auto input = Day::Input(simple);
-
-	size_t score = 0;
+	int score = 0;
 
 	for (std::string row; input.NextRow(row);)
 	{
@@ -54,7 +52,7 @@ void AOC22::Day04::SolvePartTwo(bool simple)
 		}
 	}
 
-	std::cout << score << std::endl;
+	printf("2) (%i)\n", score);
 }
 
 AOC22::Day04::~Day04()

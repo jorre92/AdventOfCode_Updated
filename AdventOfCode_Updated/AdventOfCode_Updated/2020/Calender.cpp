@@ -13,6 +13,7 @@
 #include "../2022/Day10_2022.h"
 #include "../2022/Day11_2022.h"
 #include "../2022/Day12_2022.h"
+#include "../2022/Day13_2022.h"
 
 Day* AOC20::Calander::CreateSolution(AOCCORE::CalenderDay calenderDay) const
 {
@@ -55,6 +56,9 @@ Day* AOC20::Calander::CreateSolution(AOCCORE::CalenderDay calenderDay) const
 		break;
 	case AOCCORE::CalenderDay::Twelve:
 		day = new AOC22::Day12();
+		break;
+	case AOCCORE::CalenderDay::Thirteen:
+		day = new AOC22::Day13();
 		break;
 	default:
 		day = new DayNone();

@@ -44,8 +44,12 @@ void AOC22::Day09::SolvePartOne(bool simple)
 			snake.Move(dir);
 		}
 	}
-
-	std::cout << snake.body[snake.body.size() - 1].history.size() << std::endl;
+	
+	if (simple)
+	{
+		printf("Part 1 note: This is using the second sample data, the first resunts in answer (13) \n");
+	}
+	printf("1) (%i)\n", (int)snake.body[snake.body.size() - 1].history.size());
 }
 
 void AOC22::Day09::SolvePartTwo(bool simple)
@@ -86,7 +90,7 @@ void AOC22::Day09::SolvePartTwo(bool simple)
 		}
 	}
 
-	std::cout << snake.body[snake.body.size()-1].history.size() << std::endl;
+	printf("2) (%i)\n", (int)snake.body[snake.body.size() - 1].history.size());
 }
 
 AOC22::Day09::~Day09()

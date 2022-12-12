@@ -4,17 +4,15 @@
 
 namespace AOC22
 {
-	class Day06 : public Day
+	class Day13 : public Day
 	{
 	private:
-		int findMarker(const std::string&, size_t);
-		bool isUnique(const std::string&);
 	public:
-		Day06();
+		Day13();
 
 		void SolvePartOne(bool = false) override;
 		void SolvePartTwo(bool = false) override;
 
-		~Day06();
+		~Day13();
 	};
 }

@@ -19,7 +19,7 @@ void AOC22::PathFinder::AddToCheckList(MapCordinate* center, bool dir)
 				{
 					if ((x == center->X && y != center->Y) || (x != center->X && y == center->Y))
 					{
-						auto checkAgainst = this->Map[y][x];
+						auto& checkAgainst = this->Map[y][x];
 						auto hightCheck = dir ? checkAgainst.Hight - center->Hight <= 1 : center->Hight - checkAgainst.Hight <= 1;
 						if ((checkAgainst.Parent == nullptr && hightCheck))
 						{
@@ -39,10 +39,10 @@ void AOC22::Day12::ConstructMap(const std::vector<std::string>& mapData)
 	int xEnd = 0, yEnd = 0;
 	this->worldMap.map.clear();
 
-	for (size_t y = 0; y < mapData.size(); ++y)
+	for (int y = 0; y < mapData.size(); ++y)
 	{
 		this->worldMap.map.push_back(std::vector<MapCordinate>());
-		for (size_t x = 0; x < mapData[0].size(); ++x)
+		for (int x = 0; x < mapData[0].size(); ++x)
 		{
 			AOC22::MapCordinate coord;
 			coord.Hight = mapData[y][x];
@@ -90,28 +90,18 @@ void AOC22::Day12::SolvePartOne(bool simple)
 		auto toCheck = pf.CheckList[0];
 		if (toCheck->Hight == 'z' + 1)
 		{
-			size_t steps = 0;
+			int steps = 0;
 			auto step = pf.CheckList[0];
 			while (step->Parent != step)
 			{
-				step->Hight = '*';
 				steps++;
 				step = step->Parent;
 			}
-			std::cout << "found it " << steps << std::endl;
+			printf("1) (%i)\n", steps);
 			break;
 		}
 		pf.AddToCheckList(pf.CheckList[0]);
 		pf.CheckList.erase(pf.CheckList.begin());
-	}
-
-	for (auto& mapY : pf.Map)
-	{
-		for (auto& mapX : mapY)
-		{
-			std::cout << mapX.Hight;
-		}
-		std::cout << std::endl;
 	}
 }
 
@@ -137,28 +127,18 @@ void AOC22::Day12::SolvePartTwo(bool simple)
 		auto toCheck = pf.CheckList[0];
 		if (toCheck->Hight == 'a')
 		{
-			size_t steps = 0;
+			int steps = 0;
 			auto step = pf.CheckList[0];
 			while (step->Hight != 'z' + 1)
 			{
-				step->Hight = '*';
 				steps++;
 				step = step->Parent;
 			}
-			std::cout << "found it " << steps << std::endl;
+			printf("2) (%i)\n", steps);
 			break;
 		}
 		pf.AddToCheckList(pf.CheckList[0], false);
 		pf.CheckList.erase(pf.CheckList.begin());
-	}
-
-	for (auto& mapY : pf.Map)
-	{
-		for (auto& mapX : mapY)
-		{
-			std::cout << mapX.Hight;
-		}
-		std::cout << std::endl;
 	}
 }
 

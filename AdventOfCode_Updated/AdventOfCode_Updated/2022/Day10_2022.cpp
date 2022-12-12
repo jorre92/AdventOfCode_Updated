@@ -17,7 +17,8 @@ void AOC22::Day10::SolvePartOne(bool simple)
 	{
 		signalValue += processor.SignalCommand(row);
 	}
-	std::cout << signalValue << std::endl;
+
+	printf("1) (%i)\n", signalValue);
 }
 
 void AOC22::Day10::SolvePartTwo(bool simple)
@@ -28,6 +29,7 @@ void AOC22::Day10::SolvePartTwo(bool simple)
 
 	auto input = Day::Input(simple);
 
+	printf("2)\n");
 	for (std::string row; input.NextRow(row);)
 	{
 		processor.RenderCommand(screen, row);

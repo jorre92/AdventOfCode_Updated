@@ -134,7 +134,6 @@ int AOC22::Day08::SenicScore(const std::vector<std::string>& map, int xPos, int 
 void AOC22::Day08::SolvePartOne(bool simple)
 {
 	auto input = Day::Input(simple);
-
 	std::vector<std::string> mapStrings;
 	
 	if (input.NextBatch(mapStrings))
@@ -152,7 +151,7 @@ void AOC22::Day08::SolvePartOne(bool simple)
 			}
 		}
 
-		std::cout << treesICanSee << std::endl;
+		printf("1) (%i)\n", treesICanSee);
 	}
 
 }
@@ -177,7 +176,7 @@ void AOC22::Day08::SolvePartTwo(bool simple)
 			}
 		}
 
-		std::cout << highestScore << std::endl;
+		printf("2) (%i)\n", highestScore);
 	}
 }
 
