@@ -4,14 +4,14 @@
 #include <type_traits>
 
 #include "Day.h"
-#include "2020/Calender.h"
+#include "Calender.h"
 
 namespace EXECUTE
 {
 	void Exe(AOCCORE::CalenderDay dayId, bool simpleData = false)
 	{
 		Day* day;
-		AOC20::Calander calender;
+		AOCCORE::Calander calender;
 
 		day = calender.CreateSolution(dayId);
 

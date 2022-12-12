@@ -1,21 +1,21 @@
 #include "Calender.h"
 
-#include "../DayNone.h"
-#include "../2022/Day01_2022.h"
-#include "../2022/Day02_2022.h"
-#include "../2022/Day03_2022.h"
-#include "../2022/Day04_2022.h"
-#include "../2022/Day05_2022.h"
-#include "../2022/Day06_2022.h"
-#include "../2022/Day07_2022.h"
-#include "../2022/Day08_2022.h"
-#include "../2022/Day09_2022.h"
-#include "../2022/Day10_2022.h"
-#include "../2022/Day11_2022.h"
-#include "../2022/Day12_2022.h"
-#include "../2022/Day13_2022.h"
+#include "DayNone.h"
+#include "2022/Day01_2022.h"
+#include "2022/Day02_2022.h"
+#include "2022/Day03_2022.h"
+#include "2022/Day04_2022.h"
+#include "2022/Day05_2022.h"
+#include "2022/Day06_2022.h"
+#include "2022/Day07_2022.h"
+#include "2022/Day08_2022.h"
+#include "2022/Day09_2022.h"
+#include "2022/Day10_2022.h"
+#include "2022/Day11_2022.h"
+#include "2022/Day12_2022.h"
+#include "2022/Day13_2022.h"
 
-Day* AOC20::Calander::CreateSolution(AOCCORE::CalenderDay calenderDay) const
+Day* AOCCORE::Calander::CreateSolution(AOCCORE::CalenderDay calenderDay) const
 {
 	Day* day;
 
@@ -68,7 +68,7 @@ Day* AOC20::Calander::CreateSolution(AOCCORE::CalenderDay calenderDay) const
 	return day;
 }
 
-void AOC20::Calander::DestroySolution(Day* solution) const
+void AOCCORE::Calander::DestroySolution(Day* solution) const
 {
 	delete(solution);
 }

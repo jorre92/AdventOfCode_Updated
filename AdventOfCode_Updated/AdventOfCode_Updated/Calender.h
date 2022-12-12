@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../Day.h"
-#include "../CalenderDay.h"
+#include "Day.h"
+#include "CalenderDay.h"
 
-namespace AOC19
+namespace AOCCORE
 {
 	class Calander
 	{
@@ -12,3 +12,4 @@ namespace AOC19
 		void DestroySolution(Day*) const;
 	};
 }
+
