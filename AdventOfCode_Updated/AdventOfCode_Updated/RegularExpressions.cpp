@@ -12,7 +12,7 @@ bool AOCCORE::RegularExpressions::RunSearch(const std::string string, const std:
 
 	if (found)
 	{
-		result = match[1];
+		result = match[0];
 	}
 
 	return found;
