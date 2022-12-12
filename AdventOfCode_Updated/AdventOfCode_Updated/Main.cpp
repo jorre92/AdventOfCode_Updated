@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <chrono>
 #include <type_traits>
@@ -33,13 +32,13 @@ namespace EXECUTE
 	}
 }
 
-//#define DEBUG
+#define DEBUG
 
 int main()
 {
 
 #ifdef DEBUG
-	EXECUTE::Exe(AOCCORE::CalenderDay::Eleven, true);
+	EXECUTE::Exe(AOCCORE::CalenderDay::Fourteen, true);
 #endif // DEBUG
 
 
