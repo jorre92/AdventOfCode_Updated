@@ -4,6 +4,7 @@
 
 #include "Day.h"
 #include "Calender.h"
+#define DEBUG
 
 namespace EXECUTE
 {
@@ -31,8 +32,6 @@ namespace EXECUTE
 		calender.DestroySolution(day);
 	}
 }
-
-//#define DEBUG
 
 int main()
 {

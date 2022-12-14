@@ -39,8 +39,11 @@ namespace AOC22
 	private:
 		PointMap flow;
 		int MaxY = 0;
+		int MaxX = 0;
+		int MinX = 500;
+		void CalculateMaxSize(PointMap&, PointMap&);
 		void AddRocks(PointMap&, Point, Point);
-		void PaintMap(PointMap&, PointMap&);
+		void Display(PointMap&, PointMap&, bool = false);
 		bool DropSand(PointMap&, PointMap&, Point, int* = NULL);
 	public:
 		Day14();

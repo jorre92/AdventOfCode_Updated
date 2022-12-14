@@ -7,6 +7,40 @@ AOC22::Day14::Day14() : Day("Input//2022//day14_data.txt", "Input//2022//day14_d
 {
 }
 
+void AOC22::Day14::CalculateMaxSize(PointMap& rocks, PointMap& sand)
+{
+	for (auto& rock : rocks)
+	{
+		if (rock.first.X > this->MaxX)
+		{
+			this->MaxX = rock.first.X;
+		}
+		if (rock.first.X < this->MinX)
+		{
+			this->MinX = rock.first.X;
+		}
+		if (rock.first.Y > this->MaxY)
+		{
+			this->MaxY = rock.first.Y;
+		}
+	}
+	for (auto& s : sand)
+	{
+		if (s.first.X > this->MaxX)
+		{
+			this->MaxX = s.first.X;
+		}
+		if (s.first.X < this->MinX)
+		{
+			this->MinX = s.first.X;
+		}
+		if (s.first.Y > this->MaxY)
+		{
+			this->MaxY = s.first.Y;
+		}
+	}
+}
+
 void AOC22::Day14::AddRocks(PointMap& rocks, AOC22::Point from, AOC22::Point to)
 {
 	auto current = from;
@@ -29,57 +63,38 @@ void AOC22::Day14::AddRocks(PointMap& rocks, AOC22::Point from, AOC22::Point to)
 	}
 }
 
-void AOC22::Day14::PaintMap(PointMap& rocks, PointMap& sand)
+void AOC22::Day14::Display(PointMap& rocks, PointMap& sand, bool animate)
 {
-	int maxX = 500;
-	int minX = 500;
-
-	for (auto& rock : rocks)
-	{
-		if (rock.first.X > maxX)
-		{
-			maxX = rock.first.X;
-		}
-		if(rock.first.X < minX)
-		{
-			minX = rock.first.X;
-		}
-	}
-	for (auto& s : sand)
-	{
-		if (s.first.X > maxX)
-		{
-			maxX = s.first.X;
-		}
-		if (s.first.X < minX)
-		{
-			minX = s.first.X;
-		}
-	}
+	std::string toPrint;
 
 	for (int y = 0; y <= this->MaxY; y++)
 	{
-		for (int x = minX; x <= maxX; x++)
+		for (int x = this->MinX; x <= this->MaxX; x++)
 		{
 			if (rocks[AOC22::Point(x, y)])
 			{
-				printf("#");
+				toPrint += "#";
 			}
 			else if (sand[AOC22::Point(x, y)])
 			{
-				printf("0");
+				toPrint += "0";
 			}
 			else if (flow[AOC22::Point(x, y)])
 			{
-				printf("~");
+				toPrint += "~";
 			}
 			else
 			{
-				printf(".");
+				toPrint += ".";
 			}
 		}
-		printf("\n");
+		toPrint += "\n";
 	}
+	if (animate)
+	{
+		system("CLS");
+	}
+	printf("%s\n", toPrint.c_str());
 }
 
 bool AOC22::Day14::DropSand(PointMap& rocks, PointMap& sand, Point start, int* floor)
@@ -168,13 +183,7 @@ void AOC22::Day14::SolvePartOne(bool simple)
 		}
 	}
 
-	for (auto& rock : rocks)
-	{
-		if (this->MaxY < rock.first.Y)
-		{
-			this->MaxY = rock.first.Y;
-		}
-	}
+	CalculateMaxSize(rocks, sand);
 
 	int points = 0;
 	for (int i = 0; true; i++)
@@ -185,7 +194,7 @@ void AOC22::Day14::SolvePartOne(bool simple)
 			break;
 		}
 	}
-	
+
 	printf("1) (%i)\n", points);
 }
 
@@ -217,15 +226,7 @@ void AOC22::Day14::SolvePartTwo(bool simple)
 		}
 	}
 
-	this->MaxY = 0;
-
-	for (auto& rock : rocks)
-	{
-		if (this->MaxY < rock.first.Y)
-		{
-			this->MaxY = rock.first.Y;
-		}
-	}
+	CalculateMaxSize(rocks, sand);
 
 	int points = 0;
 	int floor = this->MaxY + 2;
