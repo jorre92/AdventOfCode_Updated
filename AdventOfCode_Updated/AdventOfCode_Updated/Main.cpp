@@ -32,18 +32,18 @@ namespace EXECUTE
 	}
 }
 
-#define DEBUG
+//#define DEBUG
 
 int main()
 {
 
 #ifdef DEBUG
-	EXECUTE::Exe(AOCCORE::CalenderDay::Fourteen, true);
+	EXECUTE::Exe(AOCCORE::CalenderDay::Fourteen, false);
 #endif // DEBUG
 
 
 #ifndef DEBUG
-	for (int i = 0; i < AOCCORE::CalenderDay::Fourteen; ++i)
+	for (int i = 0; i < AOCCORE::CalenderDay::NumberOfDays; ++i)
 	{
 		EXECUTE::Exe((AOCCORE::CalenderDay)i, false);
 	}
