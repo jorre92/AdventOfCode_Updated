@@ -4,6 +4,7 @@
 
 #include "Day.h"
 #include "Calender.h"
+
 #define DEBUG
 
 namespace EXECUTE
@@ -37,14 +38,14 @@ int main()
 {
 
 #ifdef DEBUG
-	EXECUTE::Exe(AOCCORE::CalenderDay::Fourteen, false);
+	EXECUTE::Exe(AOCCORE::CalenderDay::Fifteen, true);
 #endif // DEBUG
 
 
 #ifndef DEBUG
 	for (int i = 0; i < AOCCORE::CalenderDay::NumberOfDays; ++i)
 	{
-		EXECUTE::Exe((AOCCORE::CalenderDay)i, false);
+		EXECUTE::Exe((AOCCORE::CalenderDay)i, true);
 	}
 #endif // !DEBUG
 
