@@ -11,7 +11,7 @@ namespace AOC22
 		std::vector<std::variant<int, AOC22::Node>> Data;
 
 		bool IsInt(size_t index) const { return this->Data[index].index() == 0; }
-		bool IsNode(size_t index) const { return Data[index].index() == 0; }
+		bool IsNode(size_t index) const { return this->Data[index].index() == 0; }
 
 		int GetInt(size_t index) const { return std::get<int>(this->Data[index]); }
 	};

@@ -32,7 +32,7 @@ namespace AOC22
 		}
 	};
 
-	typedef std::unordered_map<Point, bool, hashFunc, equalsFunc> PointMap;
+	typedef std::unordered_map<Point, bool, AOC22::hashFunc, AOC22::equalsFunc> PointMap;
 
 	class Day14 : public Day
 	{
