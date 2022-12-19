@@ -32,6 +32,47 @@ void AOC22::Day17::PrintMap(const PointMap& map, TetrisBlock& block, int highest
 	}
 }
 
+bool AOC22::Day17::LoopDetector(const PointMap& map, size_t height, size_t it, std::pair<size_t, size_t>& out)
+{
+	std::vector<std::string> state;
+
+	for (size_t y = height; y > (height - 15); y--)
+	{
+		std::string row = "";
+
+		for (int x = 1; x < 8; x++)
+		{
+			if (map.find(Point(x, y)) != map.end())
+			{
+				row += "#";
+			}
+			else 
+			{
+				row += ".";
+			}
+		}
+
+		state.push_back(row);
+	}
+
+	auto snapshot = AOC22::TetrisSnapshot(state, it, height);
+	auto match = std::find(this->snapshots.begin(), this->snapshots.end(), snapshot);
+	if (match != this->snapshots.end())
+	{
+		auto a = *match;
+		out.first = it - a.Itteration;
+		out.second = height - a.Height;
+		return true;
+
+	}
+	else
+	{
+		this->snapshots.push_back(snapshot);
+	}
+
+	return false;
+}
+
 AOC22::Day17::Day17() : Day("Input//2022//day17_data.txt", "Input//2022//day17_data_simple.txt")
 {
 }
@@ -49,7 +90,7 @@ void AOC22::Day17::SolvePartOne(bool simple)
 	std::string commands;
 
 	input.NextRow(commands);
-	
+
 	PointMap map;
 	// create floor
 	for (int i = -1; i < 8; i++)
@@ -58,6 +99,7 @@ void AOC22::Day17::SolvePartOne(bool simple)
 	}
 	size_t highestPoint = 0;
 	size_t itteration = 0;
+
 	for (int i = 0; i < 2022; i++)
 	{
 		AOC22::TetrisBlock nextBlock = blocks[i % blocks.size()];
@@ -88,7 +130,7 @@ void AOC22::Day17::SolvePartOne(bool simple)
 		}
 	}
 
-	printf("1) (%i)\n", highestPoint);
+	printf("1) (%llu)\n", highestPoint);
 }
 
 void AOC22::Day17::SolvePartTwo(bool simple)
@@ -116,19 +158,21 @@ void AOC22::Day17::SolvePartTwo(bool simple)
 	size_t itteration = 0;
 	size_t total = 1000000000000;
 
+	size_t snapshotTime = blocks.size() * commands.size();
+
+	size_t toAdd = 0;
+
+
 	for (size_t i = 0; i < total; i++)
 	{
 		AOC22::TetrisBlock nextBlock = blocks[i % blocks.size()];
 		nextBlock.Move(Point(3, nextBlock.height + highestPoint + 3));
-
 		while (true)
 		{
 			auto command = commands[itteration];
 			Point Dir = command == '<' ? Point(-1, 0) : Point(1, 0);
-			itteration += 1;
+			itteration++;
 			itteration %= commands.size();
-
-
 
 			if (nextBlock.CanMove(map, Dir))
 			{
@@ -139,17 +183,30 @@ void AOC22::Day17::SolvePartTwo(bool simple)
 			{
 				nextBlock.Move(Point(0, -1));
 			}
-
-			if (nextBlock.CanMove(map, Point(0, -1)))
+			else
 			{
 				auto blocksHighestPoint = nextBlock.LockBlock(map);
-					highestPoint = std::max(blocksHighestPoint, highestPoint);
-					break;
+				highestPoint = std::max(blocksHighestPoint, highestPoint);
+				break;
+			}
+		}
+
+		if (toAdd == 0 && i != 0 && i % snapshotTime == 0)
+		{
+			std::pair<size_t, size_t> results;
+			if (LoopDetector(map, highestPoint, i, results))
+			{
+				size_t left = total - i;
+
+				size_t jumps = left / results.first;
+
+				i = i + (jumps * results.first);
+				toAdd = jumps * results.second;
 			}
 		}
 	}
 
-	printf("2) (%llu)\n", highestPoint);
+	printf("2) (%llu)\n", highestPoint + toAdd);
 }
 
 AOC22::Day17::~Day17()

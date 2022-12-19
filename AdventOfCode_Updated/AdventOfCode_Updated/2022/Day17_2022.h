@@ -86,10 +86,39 @@ namespace AOC22
 		}
 	};
 
+	struct TetrisSnapshot
+	{
+		std::vector<std::string> Snapshot;
+		size_t Itteration;
+		size_t Height;
+
+		TetrisSnapshot(std::vector<std::string> snapshot, size_t itteration, size_t height) : Itteration(itteration), Height(height)
+		{
+			for (auto& s : snapshot)
+			{
+				Snapshot.push_back(s);
+			}
+		}
+
+		inline bool operator==(const TetrisSnapshot& other) const
+		{
+			for (int i = 0; i < this->Snapshot.size(); i++)
+			{
+				if (this->Snapshot[i] != other.Snapshot[i])
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+	};
+
 	class Day17 : public Day
 	{
 	private:
+		std::vector<TetrisSnapshot> snapshots;
 		void PrintMap(const PointMap&, TetrisBlock&, int);
+		bool LoopDetector(const PointMap&, size_t, size_t, std::pair<size_t, size_t>&);
 	public:
 		Day17();
 
