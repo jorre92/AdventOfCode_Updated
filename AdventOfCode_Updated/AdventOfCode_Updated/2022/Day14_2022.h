@@ -5,13 +5,20 @@
 
 namespace AOC22
 {
-	class Point {
+	class Point
+	{
+
 	public:
+		int X, Y;
+
 		Point(int x, int y) : X(x), Y(y)
 		{
 		};
 
-		int X, Y;
+		bool operator==(const Point& rhs) const
+		{
+			return (this->X == rhs.X) && (this->Y == rhs.Y);
+		}
 	};
 
 	struct hashFunc 
