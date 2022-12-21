@@ -38,14 +38,14 @@ int main()
 {
 
 #ifdef DEBUG
-	EXECUTE::Exe(AOCCORE::CalenderDay::Twenty, false);
+	EXECUTE::Exe(AOCCORE::CalenderDay::TwentyOne, false);
 #endif // DEBUG
 
 
 #ifndef DEBUG
 	for (int i = 0; i < AOCCORE::CalenderDay::NumberOfDays; ++i)
 	{
-		EXECUTE::Exe((AOCCORE::CalenderDay)i, true);
+		EXECUTE::Exe((AOCCORE::CalenderDay)i, false);
 	}
 #endif // !DEBUG
 
